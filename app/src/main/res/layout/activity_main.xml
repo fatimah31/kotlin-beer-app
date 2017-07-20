@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <!-- Toolbar -->
+    <!-- We set this here to get more control over the toolbar itself,
+         rather than having Android tell us how we want our Toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="2dp"
+        tools:ignore="UnusedAttribute">
+
+        <!-- Title -->
+        <com.mikemilla.beers.BeerAppTextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <!-- List of Beers -->
+    <!-- RecyclerView is used here because other view do not remove
+         list items from the view while scrolling. RecyclerView keeps performance smooth. -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>

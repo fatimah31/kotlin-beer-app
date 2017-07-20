@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="?android:selectableItemBackground"
+    tools:ignore="RtlHardcoded">
+
+    <!-- Image Wrapper -->
+    <!-- Allows us to add rounded corners to the view -->
+    <android.support.v7.widget.CardView
+        android:id="@+id/image_wrapper"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="0dp">
+
+        <!-- Image View -->
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGrayLight"
+            android:scaleType="centerCrop" />
+
+    </android.support.v7.widget.CardView>
+
+    <!-- Title & Subtitle Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/image_wrapper"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <com.mikemilla.beers.BeerAppTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:textColor="@color/colorGrayDark"
+            android:textSize="16sp" />
+
+        <!-- Subtitle -->
+        <com.mikemilla.beers.BeerAppTextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorGrayMedium"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <!-- This could be created with a Decorator, but that tends to limit the flexibility.
+         Using a View in this item allows us to be as creative as we want, when we want to. -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorDivider" />
+
+</RelativeLayout>
